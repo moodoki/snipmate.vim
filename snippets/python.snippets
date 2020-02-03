@@ -240,3 +240,29 @@ snippet kwargs
 	**kwargs${1:,}${0}
 snippet akw
 	*args, **kwargs${1:,}${0}
+#abseil
+snippet abslmain
+	from absl import app, flags
+
+	FLAGS = flags.FLAGS
+	#flags.DEFINE_string('strval', None, 'help')
+	#flags.DEFINE_integer('intval', None, 'help')
+	#flags.DEFINE_float('floatval', None, 'help')
+	#flags.DEFINE_boolean('boolval', None, 'help')
+
+	def main(argv):
+		if argv:
+			print('Unprocessed args:', argv)
+	
+	if __name__ == '__main__':
+		app.run(main)
+snippet abstr
+	flags.DEFINE_string('${0:flag}', '${1:default}', '${2:help}')
+snippet abint
+	flags.DEFINE_integer('${0:flag}', ${1:0}, '${2:help}')
+snippet abfloat
+	flags.DEFINE_float('${0:flag}', ${1:default}, '${2:help}')
+snippet abstr
+	flags.DEFINE_boolean('${0:flag}', ${1:default}, '${2:help}')
+snippet abreq
+	flags.mark_as_required('${0:flag}')
