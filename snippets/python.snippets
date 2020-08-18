@@ -266,3 +266,7 @@ snippet abbool
 	flags.DEFINE_boolean('${0:flag}', ${1:default}, '${2:help}')
 snippet abreq
 	flags.mark_as_required('${0:flag}')
+snippet abvalidate
+	flags.register_validator('${0:flag}',
+	                         ${1:val_fn(x)},
+							 message='${2:val_mesg}')
